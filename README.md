@@ -13,20 +13,4 @@ Grade Reasoning:
 Issue with IntSet::remove(int anInt) for being out of bounds when shifting elements after 
 an element is removed. Fixed in assignment #2, look at updated IntSet::remove(int anInt).
 
-bool IntSet::remove(int anInt)
-{
-    // If the intSet has the requested element in the set then
-    // remove it, and shift all elements to the left by one.
-    if(contains(anInt)){
-        for(int index = 0; index < size(); index++){
-            if(data[index] == anInt) {
-                for(int index2 = index; index2 < size(); index2++) {
-                    data[index2] = data[index2 + 1]; <------------------ Lost points for this line!
-                }
-                used--;
-                return true; // Int removed successfully.
-            }
-        }
-    }
-    return false; // No int removed.
-}
+data[index2] = data[index2 + 1]; <------------------ Lost points for this line!
